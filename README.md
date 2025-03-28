@@ -14,11 +14,11 @@
 ## Setup and Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/krs1zzet/Text2SQL
     ```
 2. Navigate to the project directory:
     ```sh
-    cd your-repo
+    cd Text2SQL
     ```
 3. Build the project using Maven:
     ```sh
