@@ -26,7 +26,7 @@ spring:
       platform: postgres
       schema-locations: classpath:schema.sql
 
-# logging ayar?n? istedi?inde açabilirsin:
+# logging ayar?n? istedi?inde aÃ§abilirsin:
 # logging:
 #   level:
 #     org.springframework.security: TRACE
