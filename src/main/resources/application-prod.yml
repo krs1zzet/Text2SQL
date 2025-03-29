@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: text2sql
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: false # Production'da genelde kapatılır
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+      javax:
+        persistence:
+          validation:
+            mode: none
+
+  sql:
+    init:
+      mode: never
