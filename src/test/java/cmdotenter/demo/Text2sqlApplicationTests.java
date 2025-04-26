@@ -1,4 +1,4 @@
-package cmdotenter.text2sql;
+package cmdotenter.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

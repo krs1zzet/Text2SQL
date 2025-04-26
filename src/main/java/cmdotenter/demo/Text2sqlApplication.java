@@ -1,4 +1,4 @@
-package cmdotenter.text2sql;
+package cmdotenter.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
