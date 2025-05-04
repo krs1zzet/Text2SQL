@@ -1,8 +1,8 @@
 package cmdotenter.demo.controllerTest;
 
-import cmdotenter.demo.sqlConverter.controller.UserController;
-import cmdotenter.demo.sqlConverter.dto.UserDTO;
-import cmdotenter.demo.sqlConverter.service.UserService;
+import cmdotenter.demo.features.sqlConverter.controller.UserController;
+import cmdotenter.demo.features.sqlConverter.dto.UserDTO;
+import cmdotenter.demo.features.sqlConverter.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
