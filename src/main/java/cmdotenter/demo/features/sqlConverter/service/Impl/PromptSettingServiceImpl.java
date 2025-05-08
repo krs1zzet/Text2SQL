@@ -24,12 +24,14 @@ public class PromptSettingServiceImpl implements PromptSettingService {
 
 
     @Override
-    public void save(CreatePromptSettingRequest createPromptSettingRequest) {
+    public Long save(CreatePromptSettingRequest createPromptSettingRequest) {
         PromptSetting promptSetting = new PromptSetting();
         promptSetting.setExamples(createPromptSettingRequest.getExamples());
         promptSetting.setTechnique(createPromptSettingRequest.getTechnique());
         promptSetting.setnValue(createPromptSettingRequest.getnValue());
+        promptSetting.setModelName(createPromptSettingRequest.getModel());
         promptSettingRepository.save(promptSetting);
+        return promptSetting.getId();
     }
 
     @Override

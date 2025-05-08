@@ -1,5 +1,6 @@
 package cmdotenter.demo.features.sqlConverter.controller;
 
+import cmdotenter.demo.features.sqlConverter.dto.ChatDTO;
 import cmdotenter.demo.features.sqlConverter.dto.DatabaseDTO;
 import cmdotenter.demo.features.sqlConverter.dto.request.createRequests.CreateDatabaseRequest;
 import cmdotenter.demo.features.sqlConverter.service.DatabaseService;
@@ -39,5 +40,17 @@ public class DatabaseController {
         databaseService.deleteById(id);
         log.info("Database deleted");
         return ResponseEntity.ok().build();
+    }
+    @PutMapping("/database/{id}")
+    public ResponseEntity<Void> updateDatabase(@PathVariable Long id, @RequestBody CreateDatabaseRequest createDatabaseRequest) {
+        databaseService.updateById(id, createDatabaseRequest);
+        log.info("Database updated");
+        return ResponseEntity.ok().build();
+    }
+    @GetMapping("/chat/database/{id}")
+    public ResponseEntity<DatabaseDTO> getDatabaseByChatId(@PathVariable Long id) {
+        DatabaseDTO databaseDTO = databaseService.findDatabaseByChatId(id);
+        log.info("Find all chat by database id");
+        return ResponseEntity.ok(databaseDTO);
     }
 }

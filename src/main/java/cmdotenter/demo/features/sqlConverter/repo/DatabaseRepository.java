@@ -4,4 +4,5 @@ import cmdotenter.demo.features.sqlConverter.entity.Database;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DatabaseRepository extends JpaRepository<Database, Long> {
+    Database findByChatId(Long chatId);
 }

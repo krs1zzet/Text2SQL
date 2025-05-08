@@ -14,7 +14,8 @@ public class PrompSettingDTOConverter {
                 from.getTechnique(),
                 from.getnValue(),
                 from.getExamples(),
-                from.getCreatedAt()
+                from.getCreatedAt(),
+                from.getModelName()
         );
     }
     public List<PromptSettingDTO> convert(List<PromptSetting> from) {

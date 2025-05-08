@@ -27,6 +27,9 @@ public class PromptSetting {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @Column(name = "model_name")
+    private String modelName;
+
     @OneToMany(mappedBy = "promptSetting", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<ChatMessage> chatMessage;
 
@@ -78,15 +81,22 @@ public class PromptSetting {
         this.chatMessage = chatMessage;
     }
 
+    public String getModelName() {
+        return modelName;
+    }
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
     public PromptSetting() {
     }
 
-    public PromptSetting(Long id, Integer nValue, String technique, String examples, LocalDateTime createdAt, List<ChatMessage> chatMessage) {
+    public PromptSetting(Long id, Integer nValue, String technique, String examples, LocalDateTime createdAt, List<ChatMessage> chatMessage,String modelName) {
         this.id = id;
         this.nValue = nValue;
         this.technique = technique;
         this.examples = examples;
         this.createdAt = createdAt;
         this.chatMessage = chatMessage;
+        this.modelName = modelName;
     }
 }

@@ -29,10 +29,10 @@ public class PromptSettingController {
     }
 
     @PostMapping("/prompt-setting")
-    public ResponseEntity<Void> createPromptSetting(@RequestBody CreatePromptSettingRequest createPromptSettingRequest) {
-        promptSettingService.save(createPromptSettingRequest);
+    public ResponseEntity<Long> createPromptSetting(@RequestBody CreatePromptSettingRequest createPromptSettingRequest) {
+        Long id = promptSettingService.save(createPromptSettingRequest);
         log.info("Prompt setting saved");
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(id);
     }
 
     @DeleteMapping("/prompt-setting/{id}")

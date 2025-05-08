@@ -65,4 +65,30 @@ public class DatabaseServiceImpl implements DatabaseService {
     public Database findByIdReturnDatabase(Long id) {
         return databaseRepository.findById(id).orElseThrow(() -> new RuntimeException("Database not found"));
     }
+
+    @Override
+    public void updateById(Long id, CreateDatabaseRequest createDatabaseRequest) {
+        Database database = databaseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Database not found"));
+
+        if (database.getChat() != null) {
+            database.getChat().setDatabase(null);
+        }
+
+        database.setChat(chatService.findByIdReturnChat(createDatabaseRequest.getChatId()));
+        database.setDataText(createDatabaseRequest.getDataText());
+        database.setSchemaText(createDatabaseRequest.getSchemaText());
+
+        databaseRepository.save(database);
+    }
+
+    @Override
+    public DatabaseDTO findDatabaseByChatId(Long id) {
+        Database database = databaseRepository.findByChatId(id);
+        if (database == null) {
+            throw new RuntimeException("Database not found");
+        }
+        return databaseDTOConverter.convert(database);
+    }
+
 }

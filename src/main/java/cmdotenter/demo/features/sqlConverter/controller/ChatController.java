@@ -39,4 +39,5 @@ public class ChatController {
         logger.info("Chat deleted");
         return ResponseEntity.ok().build();
     }
+
 }

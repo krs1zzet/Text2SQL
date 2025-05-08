@@ -12,4 +12,6 @@ public interface DatabaseService {
     public List<DatabaseDTO> findAll();
     public void deleteById(Long id);
     public Database findByIdReturnDatabase(Long id);
+    public void updateById(Long id, CreateDatabaseRequest createDatabaseRequest);
+    public DatabaseDTO findDatabaseByChatId(Long id);
 }

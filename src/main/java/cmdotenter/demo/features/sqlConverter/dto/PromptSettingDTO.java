@@ -14,12 +14,15 @@ public class PromptSettingDTO {
 
     private LocalDateTime createdAt;
 
-    public PromptSettingDTO(Long id, String technique, Integer nValue, String examples, LocalDateTime createdAt) {
+    private String modelName;
+
+    public PromptSettingDTO(Long id, String technique, Integer nValue, String examples, LocalDateTime createdAt, String modelName) {
         this.id = id;
         this.technique = technique;
         this.nValue = nValue;
         this.examples = examples;
         this.createdAt = createdAt;
+        this.modelName = modelName;
     }
 
     public PromptSettingDTO() {
@@ -63,5 +66,13 @@ public class PromptSettingDTO {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
 }
